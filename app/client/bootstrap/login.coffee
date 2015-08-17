@@ -1,6 +1,7 @@
 Accounts.onLogin () ->
   loginToken = Accounts._storedLoginToken()
   username = Session.get 'username'
+  #Перевіряю чи токени змінилися. Якщо так, то обновляю їх в базі
   Meteor.subscribe('tokens')
   if !Tokens.findOne(username: username)
     Tokens.insert {username: username, token: loginToken, pintry: 0}

@@ -1,3 +1,5 @@
+# Запис в базу часу, через скільки робиться анлогін при неактивності
+
 Template.Profile.events
   'click .set-idle': () ->
     idle = $('[name=idle]').val()

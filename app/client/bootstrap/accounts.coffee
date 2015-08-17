@@ -1,7 +1,6 @@
 AccountsTemplates.configure
   forbidClientAccountCreation: true
 
-
 AccountsTemplates.addField
   _id: 'pincode'
   type: 'password'

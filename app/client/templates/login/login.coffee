@@ -10,6 +10,7 @@ Template.Login.events
       if err
         console.log err.reason
       else
+        # Тут при успішному логіні через пароль я обнуляю кількість спроб входу через пінкод
         tId = Tokens.findOne(username: username)._id
         pintry = 0
         Tokens.update(

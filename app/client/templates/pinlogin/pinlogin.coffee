@@ -3,6 +3,9 @@ Template.PinLogin.helpers
     usrname = Session.get 'sw-user'
     usrname
 
+
+# Тут відбувається логін по пінкоду разом з перевіркою кількості неправильних спроб
+
 Template.PinLogin.events
   'submit form': (e) ->
     e.preventDefault()

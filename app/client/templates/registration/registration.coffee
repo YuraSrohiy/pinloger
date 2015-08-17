@@ -20,8 +20,5 @@ Template.Registration.events
       if Meteor.user()
         Router.go 'profile'
     ), 1000
-    
-    if Meteor.user()
-      Router.go 'profile'
 Template.Registration.onRendered () ->
   Meteor.logout()

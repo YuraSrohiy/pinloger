@@ -18,7 +18,5 @@ Template.MenuItem.events
     e.preventDefault()
     username = Template.currentData().username
     Meteor.logout()
-    if Meteor.isServer
-      token = Tokens.findOne(username: username).token
     Session.set 'sw-user', username
     Router.go('pinlogin')
