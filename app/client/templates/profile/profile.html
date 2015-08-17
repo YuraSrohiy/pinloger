@@ -1,0 +1,10 @@
+<template name = "Profile">
+  {{#if currentUser}}
+  <h3>Profile</h3>
+  {{/if}}
+  {{#if isInRole 'admin'}}
+    <p>Set idle time (sec)</p>
+    <input type = "text" name="idle">
+    <button class="btn set-idle">Set idle time</button>
+  {{/if}}
+</template>

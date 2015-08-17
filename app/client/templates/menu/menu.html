@@ -1,0 +1,40 @@
+<template name = "MenuItem">
+  <li><a href="" class="sw-item-btn">{{username}}</a></li>
+</template>
+
+<template name = "Menu">
+  <div class="well">
+    <div class="row">
+      {{# if currentUser}}
+        <div class="col-md-1 col-lg-1">
+          <h4><b>{{getUsername}}</b></h4>
+        </div>
+        <div class="col-md-1 col-lg-1">
+          <button class="btn logout-btn">Logout</button>
+        </div>
+      {{else}}
+        <div class="col-md-2 col-lg-2">
+          {{#linkTo route='register'}}
+            <button class="btn register-btn">Register</button>
+          {{/linkTo}}
+          {{#linkTo route = 'login'}}
+            <button class="btn login-btn">Login</button>
+          {{/linkTo}}
+        </div>
+      {{/if}}
+      <div class="col-md-2 col-lg-2"> 
+        <div class="dropdown">
+          <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Switch user
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dLabel">
+            {{#each getUsers}}
+              {{>MenuItem}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
